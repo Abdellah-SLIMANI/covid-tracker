@@ -7,15 +7,13 @@ namespace covid_project
     class Virus
     {
         private Boolean _isDeadly;
+        private string _strenght;
+
         public Virus()
         {
 
         }
         
-        private bool isDeadly()
-        {
-            return false;
-        }
 
     }
 }
