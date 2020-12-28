@@ -1,0 +1,13 @@
+C:\Users\morsc\source\repos\covid-project\covid-project\bin\Debug\netcoreapp3.1\covid-project.exe
+C:\Users\morsc\source\repos\covid-project\covid-project\bin\Debug\netcoreapp3.1\covid-project.deps.json
+C:\Users\morsc\source\repos\covid-project\covid-project\bin\Debug\netcoreapp3.1\covid-project.runtimeconfig.json
+C:\Users\morsc\source\repos\covid-project\covid-project\bin\Debug\netcoreapp3.1\covid-project.runtimeconfig.dev.json
+C:\Users\morsc\source\repos\covid-project\covid-project\bin\Debug\netcoreapp3.1\covid-project.dll
+C:\Users\morsc\source\repos\covid-project\covid-project\bin\Debug\netcoreapp3.1\covid-project.pdb
+C:\Users\morsc\source\repos\covid-project\covid-project\obj\Debug\netcoreapp3.1\covid-project.csprojAssemblyReference.cache
+C:\Users\morsc\source\repos\covid-project\covid-project\obj\Debug\netcoreapp3.1\covid-project.AssemblyInfoInputs.cache
+C:\Users\morsc\source\repos\covid-project\covid-project\obj\Debug\netcoreapp3.1\covid-project.AssemblyInfo.cs
+C:\Users\morsc\source\repos\covid-project\covid-project\obj\Debug\netcoreapp3.1\covid-project.csproj.CoreCompileInputs.cache
+C:\Users\morsc\source\repos\covid-project\covid-project\obj\Debug\netcoreapp3.1\covid-project.dll
+C:\Users\morsc\source\repos\covid-project\covid-project\obj\Debug\netcoreapp3.1\covid-project.pdb
+C:\Users\morsc\source\repos\covid-project\covid-project\obj\Debug\netcoreapp3.1\covid-project.genruntimeconfig.cache

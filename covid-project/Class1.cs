@@ -16,8 +16,10 @@ namespace covid_project
         private String _state;
 
         //contructor
-        public Citizen()
+        public Citizen(string name, string cin)
         {
+            _name = name;
+            _cin = cin;
         }
 
         //Getters and setters since everything is private in this case

@@ -9,7 +9,7 @@ namespace covid_project
         private string _name;
         private Boolean _isSafe;
         private Boolean _isWorking;
-        static int _peopleCured;
+        static int _peopleCured = 0;
 
         public Cure()
         {
