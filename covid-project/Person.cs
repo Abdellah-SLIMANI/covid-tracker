@@ -4,35 +4,39 @@ using System.Text;
 
 namespace covid_project
 {
-    class Citizen
+    class Person
     {
         //Decalring Varibales
-        private string _name;
+        private string _personName;
         private string _cin;
         private string _colorCode;
+        private int _age;
         private Boolean _isAffected;
         private Boolean _isSuspected;
         private Boolean _isAlive;
-        private String _state;
 
         //contructor
-        public Citizen(string name, string cin)
+        public Person(string name, string cin, int age, string colorCode = "")
         {
-            _name = name;
+            _personName = name;
             _cin = cin;
+            _age = age;
+            _colorCode = colorCode;
         }
 
         //Getters and setters since everything is private in this case
-        public string name
+        public string personName
         {
-            get {
-                return _name;
+            get
+            {
+                return _personName;
             }
             set
             {
-                _name = value;
+                _personName = value;
             }
         }
+        
         public string cin
         {
             get
@@ -53,6 +57,18 @@ namespace covid_project
             set
             {
                 _colorCode = value;
+            }
+        }
+
+        public int age
+        {
+            get
+            {
+                return _age;
+            }
+            set
+            {
+                _age = value;
             }
         }
         public Boolean isAffected
@@ -88,19 +104,8 @@ namespace covid_project
                 _isAlive = value;
             }
         }
-        public String state
-        {
-            get
-            {
-                return _state;
-            }
-            set
-            {
-                _state = value;
-            }
-        }
 
-        private String generateColorCode()
+        public String generateColorCode()
         {
             if (this.isSuspected)
             {
@@ -116,6 +121,16 @@ namespace covid_project
                 colorCode = "green";
             }
             return colorCode;
+        }
+
+        public void personTestResult(Test tst, Journal jrnl)
+        {
+            if (tst.testResult)
+            {
+                this.isAffected = true;
+            }
+            jrnl.infectionTime = tst.testTime;
+            generateColorCode();
         }
     }
 }
