@@ -129,5 +129,10 @@ namespace covid_project
         {
             return isAffected = testResult;
         }
+
+        public void Visited(Location location)
+        {
+            location.peoplePedningTest.Add(this);
+        }
     }
 }

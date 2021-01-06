@@ -31,10 +31,6 @@ namespace covid_project
             return false;
         }
 
-        /**
-         * @PARAM 
-         * 
-         * */
         public List<Person> generatePeoplePendingTest()
         {
             if (sickPersonDetector())
