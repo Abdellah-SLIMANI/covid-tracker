@@ -7,7 +7,7 @@ namespace covid_project
     class Location
     {
         private string _locationsName;
-        static List<Person> peoplePedningTest = new List<Person>();
+        public List<Person> peoplePedningTest = new List<Person>();
 
         public Location() { }
 
@@ -31,6 +31,10 @@ namespace covid_project
             return false;
         }
 
+        /**
+         * @PARAM 
+         * 
+         * */
         public List<Person> generatePeoplePendingTest()
         {
             if (sickPersonDetector())
