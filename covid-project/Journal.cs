@@ -45,7 +45,7 @@ namespace covid_project
                 _deathTime = value;
             }
         }
-         public DateTime generateInfectionTime()
+        public DateTime generateInfectionTime()
         {
             DateTime infectedAt = DateTime.Now;
             return infectedAt;

@@ -14,6 +14,7 @@ namespace covid_project
         private Boolean _isAffected;
         private Boolean _isSuspected;
         private Boolean _isAlive;
+        
 
         //contructor
         public Person(string name, string cin, int age, string colorCode = "")
@@ -104,6 +105,7 @@ namespace covid_project
                 _isAlive = value;
             }
         }
+        //end of getters and setters
 
         public String generateColorCode()
         {
@@ -123,14 +125,9 @@ namespace covid_project
             return colorCode;
         }
 
-        public void personTestResult(Test tst, Journal jrnl)
+        public Boolean personTestResult(Boolean testResult)
         {
-            if (tst.testResult)
-            {
-                this.isAffected = true;
-            }
-            jrnl.infectionTime = tst.testTime;
-            generateColorCode();
+            return isAffected = testResult;
         }
     }
 }

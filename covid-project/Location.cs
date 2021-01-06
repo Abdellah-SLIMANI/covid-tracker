@@ -7,7 +7,7 @@ namespace covid_project
     class Location
     {
         private string _locationsName;
-        private DateTime _timeVisited;
+        static List<Person> peoplePedningTest = new List<Person>();
 
         public Location() { }
 
@@ -23,16 +23,21 @@ namespace covid_project
             }
         }
 
-        public DateTime timeVisited
+        private Boolean sickPersonDetector()
         {
-            get
-            {
-                return _timeVisited;
-            }
-            set
-            {
-                _timeVisited = value;
-            }
+            for (int i = 0; i < peoplePedningTest.Count; i++)
+                if (peoplePedningTest[i].isAffected)
+                    return true;
+            return false;
+        }
+
+        public List<Person> generatePeoplePendingTest()
+        {
+            if (sickPersonDetector())
+                for (int i = 0; i < peoplePedningTest.Count; i++)
+                    if (!peoplePedningTest[i].isAffected)
+                        peoplePedningTest[i].isSuspected = true;
+            return peoplePedningTest;
         }
     }
 }

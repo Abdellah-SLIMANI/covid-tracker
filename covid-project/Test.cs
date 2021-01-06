@@ -7,40 +7,17 @@ namespace covid_project
     class Test
     {
         //if the result is true then it's Positive(sick) and vice versa
-        private Boolean _testResult;
-        private DateTime _testTime;
+        static Boolean _testResult;
+        static DateTime _testTime;
 
         public Test() { }
 
-        public Boolean testResult
-        {
-            get
-            {
-                return _testResult;
-            }
-            set
-            {
-                _testResult = value;
-            }
-        }
-        public DateTime testTime
-        {
-            get
-            {
-                return _testTime;
-            }
-            set
-            {
-                _testTime = value;
-            }
-        }
-
-        public Boolean generateTestResult()
+        public static Boolean generateTestResult()
         {
             Random rng = new Random();
-            testResult = rng.Next(0, 2) > 0;
-            testTime = DateTime.Now;
-            return testResult;
+            _testResult = rng.Next(0, 2) > 0;
+            _testTime = DateTime.Now;
+            return _testResult;
         }
     }
 }
