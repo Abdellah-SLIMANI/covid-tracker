@@ -22,7 +22,10 @@ namespace covid_project
                 _locationsName = value;
             }
         }
-
+        ///<Summary>
+        ///Checks if there is an Infected Person in the Location
+        ///</Summary>
+        ///<returns>a Boolean depending on id there is infected peopple on the Location or Not</returns>
         private Boolean sickPersonDetector()
         {
             for (int i = 0; i < peoplePedningTest.Count; i++)
@@ -30,7 +33,10 @@ namespace covid_project
                     return true;
             return false;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The list of persons in the Location</returns>
         public List<Person> generatePeoplePendingTest()
         {
             if (sickPersonDetector())

@@ -14,10 +14,11 @@ namespace covid_project
         private Boolean _isAffected;
         private Boolean _isSuspected;
         private Boolean _isAlive;
+        public Journal personJournal;
         
 
         //contructor
-        public Person(string name, string cin, int age, string colorCode = "")
+        public Person(string name = "", string cin = "", int age = 0,string colorCode = "")
         {
             _personName = name;
             _cin = cin;
@@ -107,6 +108,10 @@ namespace covid_project
         }
         //end of getters and setters
 
+        /// <summary>
+        /// generates a color depending on the state of the Person
+        /// </summary>
+        /// <returns>the Peron's Color Code: "red" for infected, "green" if he's not, and "orange" if he is suspected</returns>
         public String generateColorCode()
         {
             if (this.isSuspected)
@@ -124,15 +129,17 @@ namespace covid_project
             }
             return colorCode;
         }
+        /// <summary>
+        /// verifing if the Person is infected or not
+        /// </summary>
+        /// <param name="testResult"></param>
+        /// <returns>a Boolean isAffected</returns>
+        public Boolean personTestResult(Boolean testResult) => isAffected = testResult;
+        /// <summary>
+        /// adding People who visited a Location to a List to keep track of the Virus
+        /// </summary>
+        /// <param name="location"></param>
+        public void Visited(Location location) => location.peoplePedningTest.Add(this);
 
-        public Boolean personTestResult(Boolean testResult)
-        {
-            return isAffected = testResult;
-        }
-
-        public void Visited(Location location)
-        {
-            location.peoplePedningTest.Add(this);
-        }
     }
 }
