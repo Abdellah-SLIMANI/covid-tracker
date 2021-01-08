@@ -12,6 +12,11 @@ namespace covid_project
 
         public Test() { }
 
+        /// <summary>
+        /// Generates a boolean that we concider to be the test result of a person
+        /// </summary>
+        /// <returns>true if he is infected and vice versa</returns>
+
         public static Boolean generateTestResult()
         {
             Random rng = new Random();
