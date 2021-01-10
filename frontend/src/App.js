@@ -1,5 +1,5 @@
-import './App.css';
-import { connect } from 'react-redux'
+import './App.scss';
+import person from './Components/person/person'
 
 function App() {
   return (
@@ -7,13 +7,18 @@ function App() {
       <div className="header">
         <img/>
       </div>
-      <div className="tableContainer">
-        <table>
-            <td>Hello</td>
-        </table>
+      <div className="gridContainer">
+        {person()}
+        {person()}
+        {person()}
+        {person()}
+        {person()}
+        {person()}
+        {person()}
+
       </div>
     </div>
   );
 }
 
-export default connect()(App);
+export default App;
