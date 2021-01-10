@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace covid_project
 {
@@ -27,6 +29,7 @@ namespace covid_project
         }
 
         //Getters and setters since everything is private in this case
+        [BsonElement("personName")]
         public string personName
         {
             get
@@ -38,7 +41,7 @@ namespace covid_project
                 _personName = value;
             }
         }
-        
+        [BsonElement("cin")]
         public string cin
         {
             get
@@ -50,6 +53,7 @@ namespace covid_project
                 _cin = value;
             }
         }
+        [BsonElement("colorCode")]
         public string colorCode
         {
             get
@@ -61,7 +65,7 @@ namespace covid_project
                 _colorCode = value;
             }
         }
-
+        [BsonElement("age")]
         public int age
         {
             get
@@ -73,6 +77,7 @@ namespace covid_project
                 _age = value;
             }
         }
+        [BsonElement("isAffected")]
         public Boolean isAffected
         {
             get
@@ -84,6 +89,7 @@ namespace covid_project
                 _isAffected = value;
             }
         }
+        [BsonElement("isSuspected")]
         public Boolean isSuspected
         {
             get
@@ -95,6 +101,7 @@ namespace covid_project
                 _isSuspected = value;
             }
         }
+        [BsonElement("isAlive")]
         public Boolean isAlive
         {
             get
