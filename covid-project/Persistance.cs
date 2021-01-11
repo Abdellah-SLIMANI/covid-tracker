@@ -15,7 +15,7 @@ namespace covid_project
     static class Persistance
     {
         static private MongoClient client;
-        static private IMongoCollection<Person> personCollection;
+        static public IMongoCollection<Person> personCollection;
 
         static Persistance()
         {
@@ -28,13 +28,11 @@ namespace covid_project
             personCollection = database.GetCollection<Person>("person");
         }
 
-        static public void FindAll()
+
+        static public string FindAll()
         {
             var persons = personCollection.AsQueryable<Person>().ToList();
-            foreach(var person in persons)
-            {
-                Console.WriteLine(person.personName);
-            }
+            return persons[0].personName;
         }
     }
 }
