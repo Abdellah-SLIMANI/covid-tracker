@@ -1,11 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "goCIto5nD1GdAnTbysz2BD4+gDXyzbT30TonMoKVSfAdfNu5i3Qx+0CswhQY7UYki3zBrXi2i0bzEquUoZj9Rg==",
+  "dgSpecHash": "LGyVsUxSZYLAhxmIS5SktQKk0UzJhqFNWYDrbsbVzvwOhOQXVuAV1LtE40UvZPGVM6NesmmcJY4S0oYlN4FtVA==",
   "success": true,
   "projectFilePath": "C:\\Users\\morsc\\source\\repos\\covid-project\\covid-project\\covid-project.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\morsc\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
-    "C:\\Users\\morsc\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.10\\microsoft.netcore.app.host.win-x64.3.1.10.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }

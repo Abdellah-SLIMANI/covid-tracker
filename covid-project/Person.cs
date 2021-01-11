@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace covid_project
 {
@@ -14,9 +16,11 @@ namespace covid_project
         private Boolean _isAffected;
         private Boolean _isSuspected;
         private Boolean _isAlive;
+        public Journal personJournal;
+        
 
         //contructor
-        public Person(string name, string cin, int age, string colorCode = "")
+        public Person(string name = "", string cin = "", int age = 0,string colorCode = "")
         {
             _personName = name;
             _cin = cin;
@@ -25,6 +29,7 @@ namespace covid_project
         }
 
         //Getters and setters since everything is private in this case
+        [BsonElement("personName")]
         public string personName
         {
             get
@@ -36,7 +41,7 @@ namespace covid_project
                 _personName = value;
             }
         }
-        
+        [BsonElement("cin")]
         public string cin
         {
             get
@@ -48,6 +53,7 @@ namespace covid_project
                 _cin = value;
             }
         }
+        [BsonElement("colorCode")]
         public string colorCode
         {
             get
@@ -59,7 +65,7 @@ namespace covid_project
                 _colorCode = value;
             }
         }
-
+        [BsonElement("age")]
         public int age
         {
             get
@@ -71,6 +77,7 @@ namespace covid_project
                 _age = value;
             }
         }
+        [BsonElement("isAffected")]
         public Boolean isAffected
         {
             get
@@ -82,6 +89,7 @@ namespace covid_project
                 _isAffected = value;
             }
         }
+        [BsonElement("isSuspected")]
         public Boolean isSuspected
         {
             get
@@ -93,6 +101,7 @@ namespace covid_project
                 _isSuspected = value;
             }
         }
+        [BsonElement("isAlive")]
         public Boolean isAlive
         {
             get
@@ -104,7 +113,12 @@ namespace covid_project
                 _isAlive = value;
             }
         }
+        //end of getters and setters
 
+        /// <summary>
+        /// generates a color depending on the state of the Person
+        /// </summary>
+        /// <returns>the Peron's Color Code: "red" for infected, "green" if he's not, and "orange" if he is suspected</returns>
         public String generateColorCode()
         {
             if (this.isSuspected)
@@ -122,15 +136,17 @@ namespace covid_project
             }
             return colorCode;
         }
+        /// <summary>
+        /// verifing if the Person is infected or not
+        /// </summary>
+        /// <param name="testResult"></param>
+        /// <returns>a Boolean isAffected</returns>
+        public Boolean personTestResult(Boolean testResult) => isAffected = testResult;
+        /// <summary>
+        /// adding People who visited a Location to a List to keep track of the Virus
+        /// </summary>
+        /// <param name="location"></param>
+        public void Visited(Location location) => location.peoplePedningTest.Add(this);
 
-        public void personTestResult(Test tst, Journal jrnl)
-        {
-            if (tst.testResult)
-            {
-                this.isAffected = true;
-            }
-            jrnl.infectionTime = tst.testTime;
-            generateColorCode();
-        }
     }
 }

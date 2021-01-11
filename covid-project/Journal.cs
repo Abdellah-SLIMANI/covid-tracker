@@ -45,20 +45,5 @@ namespace covid_project
                 _deathTime = value;
             }
         }
-         public DateTime generateInfectionTime()
-        {
-            DateTime infectedAt = DateTime.Now;
-            return infectedAt;
-        }
-        public DateTime generateCuredTime()
-        {
-            DateTime curedAt = DateTime.Now;
-            return curedAt;
-        }
-        public DateTime generateDeathTime()
-        {
-            DateTime deadAt = DateTime.Now;
-            return deadAt;
-        }
     }
 }
