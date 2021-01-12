@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    box-shadow: 5px 0px 10px rgba(0,0,0,0.5);
+    img{
+        position: relative;
+        width: 200px;
+    }
+}
+
+.gridContainer{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
