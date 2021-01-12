@@ -12,10 +12,10 @@ using MongoDB.Driver;
 
 namespace covid_project
 {
-    static class Persistance
+    public static class Persistance
     {
         static private MongoClient client;
-        static public IMongoCollection<Person> personCollection;
+        static IMongoCollection<Person> personCollection;
 
         static Persistance()
         {
@@ -28,11 +28,10 @@ namespace covid_project
             personCollection = database.GetCollection<Person>("person");
         }
 
-
-        static public string FindAll()
+        public static List<Person> FindAll()
         {
             var persons = personCollection.AsQueryable<Person>().ToList();
-            return persons[0].personName;
+            return persons;
         }
     }
 }

@@ -12,9 +12,10 @@ namespace covid_project
 {
     class startup
     {
-        public void ConfigurationServices(IServiceCollection  service)
-        {
 
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddControllersWithViews();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -23,18 +24,12 @@ namespace covid_project
 
             app.UseEndpoints(endPoints =>
             {
-                endPoints.MapGet("/persons", async context =>
-                {
-                    await context.Response.WriteAsync("Persons here");
-                });
-            });
+                //endPoints.MapGet("/", async context =>
+                //{
+                //    await context.Response.WriteAsync("hh");
+                //});
 
-            app.UseEndpoints(endPoints =>
-            {
-                endPoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync(Persistance.FindAll());
-                });
+                endPoints.MapDefaultControllerRoute();
             });
         }
     }

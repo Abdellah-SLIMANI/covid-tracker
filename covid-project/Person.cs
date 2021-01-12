@@ -6,7 +6,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace covid_project
 {
-    class Person
+    public class Person
     {
         //Decalring Varibales
         private string _personName;
@@ -16,7 +16,7 @@ namespace covid_project
         private Boolean _isAffected;
         private Boolean _isSuspected;
         private Boolean _isAlive;
-        public Journal personJournal;
+        Journal personJournal;
         
 
         //contructor
@@ -146,7 +146,7 @@ namespace covid_project
         /// adding People who visited a Location to a List to keep track of the Virus
         /// </summary>
         /// <param name="location"></param>
-        public void Visited(Location location) => location.peoplePedningTest.Add(this);
+        void Visited(Location location) => location.peoplePedningTest.Add(this);
 
     }
 }

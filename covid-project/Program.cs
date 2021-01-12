@@ -9,10 +9,16 @@ namespace covid_project
     {
         static void Main(string[] args)
         {
+
+            Console.WriteLine(Persistance.FindAll());
+
+
             CreateHostBuilder(args)
                 .Build()
                 .Run();
-        }
+
+            
+        ;}
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
 

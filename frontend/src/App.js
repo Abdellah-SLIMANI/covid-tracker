@@ -1,21 +1,15 @@
 import './App.scss';
-import person from './Components/person/person'
+import Person from './Components/person/person'
+import logo from "./logo.jpg"
 
 function App() {
   return (
     <div className="App">
       <div className="header">
-        <img/>
+        <img src={logo}></img>
       </div>
       <div className="gridContainer">
-        {person()}
-        {person()}
-        {person()}
-        {person()}
-        {person()}
-        {person()}
-        {person()}
-
+        <Person name= "Moahmmed"></Person>
       </div>
     </div>
   );
