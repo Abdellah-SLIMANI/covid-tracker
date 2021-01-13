@@ -33,5 +33,58 @@ namespace covid_project
             var persons = personCollection.AsQueryable<Person>().ToList();
             return persons;
         }
+
+        public static List<Person> FindNonAffected()
+        {
+            var persons = personCollection.AsQueryable<Person>().ToList();
+            List<Person> newList = new List<Person>();
+
+            for (int i = 0; i < persons.Count; i++)
+            {
+                if (persons[i].colorCode == "green")
+                {
+                    newList.Add(persons[i]);
+                }
+            }
+            return newList;
+        }
+        public static List<Person> FindSuspected()
+        {
+            var persons = personCollection.AsQueryable<Person>().ToList();
+            List<Person> newList = new List<Person>();
+
+            for (int i = 0; i < persons.Count; i++)
+            {
+                if (persons[i].colorCode == "orange")
+                {
+                    newList.Add(persons[i]);
+                }
+            }
+            return newList;
+        }
+        public static List<Person> FindAffected()
+        {
+            var persons = personCollection.AsQueryable<Person>().ToList();
+            List<Person> newList = new List<Person>();
+
+            for (int i = 0; i < persons.Count; i++)
+            {
+                if (persons[i].colorCode == "red")
+                {
+                    newList.Add(persons[i]);
+                }
+            }
+            return newList;
+        }
+
+        public static void InsertPerson(Person newperson)
+        {
+            personCollection.InsertOne(newperson);
+        }
+
+        //public static void TestAPerson(Person person)
+        //{
+        //    person.personTestResult
+        //}
     }
 }

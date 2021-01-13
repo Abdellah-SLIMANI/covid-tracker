@@ -1,7 +1,6 @@
 
 
 .mainContainer{
-    width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 
@@ -9,9 +8,25 @@
         width: 60%;
         margin: 20px;
         padding: 20px;
-        background: linear-gradient(90deg, rgba(233,144,144,1) 0%, rgba(147,0,0,1) 100%);
         border-radius: 20px;
-        box-shadow: 0px 0px 10px black;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+    }
+
+    .red{
+        background-color: #990000;
+        background-image: linear-gradient(147deg, #990000 0%, #ff0000 74%);
+    }
+
+    .orange{
+        background: linear-gradient(to right, #ff6f00 0%, #f5a700 74%);
+    }
+
+    .green{
+        background: linear-gradient(to right, #0dce14 0%, #73ff61 74%);
+    }
+
+    .dead{
+        background: gray !important;
     }
 }
 

@@ -13,19 +13,15 @@ namespace covid_project
         private string _cin;
         private string _colorCode;
         private int _age;
+        private Boolean _hasSymptoms;
         private Boolean _isAffected;
         private Boolean _isSuspected;
-        private Boolean _isAlive;
-        Journal personJournal;
+        //Journal personJournal;
         
 
         //contructor
-        public Person(string name = "", string cin = "", int age = 0,string colorCode = "")
+        public Person()
         {
-            _personName = name;
-            _cin = cin;
-            _age = age;
-            _colorCode = colorCode;
         }
 
         //Getters and setters since everything is private in this case
@@ -77,6 +73,18 @@ namespace covid_project
                 _age = value;
             }
         }
+        [BsonElement("hasSymptoms")]
+        public Boolean hasSymptoms
+        {
+            get
+            {
+                return _hasSymptoms;
+            }
+            set
+            {
+                _hasSymptoms = value;
+            }
+        }
         [BsonElement("isAffected")]
         public Boolean isAffected
         {
@@ -101,18 +109,7 @@ namespace covid_project
                 _isSuspected = value;
             }
         }
-        [BsonElement("isAlive")]
-        public Boolean isAlive
-        {
-            get
-            {
-                return _isAlive;
-            }
-            set
-            {
-                _isAlive = value;
-            }
-        }
+
         //end of getters and setters
 
         /// <summary>
@@ -121,6 +118,11 @@ namespace covid_project
         /// <returns>the Peron's Color Code: "red" for infected, "green" if he's not, and "orange" if he is suspected</returns>
         public String generateColorCode()
         {
+            if (hasSymptoms)
+            {
+                isSuspected = true;
+            }
+
             if (this.isSuspected)
             {
                 //this will be the in-betwwen case 
@@ -147,6 +149,5 @@ namespace covid_project
         /// </summary>
         /// <param name="location"></param>
         void Visited(Location location) => location.peoplePedningTest.Add(this);
-
     }
 }
