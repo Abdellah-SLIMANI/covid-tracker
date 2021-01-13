@@ -1,5 +1,5 @@
 # covid-tracker
 
 
-##Uml Conception 
-![classss](https://user-images.githubusercontent.com/44339927/103254770-faf90080-4986-11eb-82d5-b47949825ed7.png)
+#Uml Conception 
+![classs](https://user-images.githubusercontent.com/44339927/104459599-3f061b00-55ad-11eb-81a6-5fad04c981c6.png)
